@@ -17,6 +17,8 @@ public class estoque {
     Scanner dados7 = new Scanner(System.in);
     Controle produtoController = new Controle();
     produto c1 = new produto();
+    raca c2 = new raca ();
+    
     
     
     int boi, rac, dia;
@@ -87,7 +89,7 @@ public class estoque {
                 System.out.println("Informe o valor da ração (kg): ");
                 rac = ler.nextInt(); 
 
-                System.out.println("Informe a quantidade de dias que deseja saber total da ração: ");
+                System.out.println("Informe a quantidade de dias que deseja saber a duração do alimento: ");
                 dia = ler.nextInt(); 
 
                 System.out.println("\nResultados:\n");
@@ -100,20 +102,20 @@ public class estoque {
             case 3: 
                 System.out.println("Raça do boi: \n");
                 raca = dados4.nextLine();
-                c1.setRaca(raca);
+                c2.setRaca(raca);
                    
                 System.out.println("Quantidade de bovino: ");
                 qtdBoi = dados5.nextLine();
-                c1.setQtdBoi(qtdBoi);
+                c2.setQtdBoi(qtdBoi);
                 
                 System.out.println("Ano de nascimento: ");
                 ano = dados6.nextLine();
-                c1.setAno(ano);
+                c2.setAno(ano);
 
                 System.out.println("Numero de identificação: ");
                 numIdem = dados7.nextLine();
-                c1.setNumIdem(numIdem);
-                
+                c2.setNumIdem(numIdem);
+                          
                 numopc = 0;
                 break;
         }
