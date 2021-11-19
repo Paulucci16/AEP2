@@ -1,4 +1,3 @@
-# AEP2
 package teste;
 
 import java.util.Scanner;
@@ -56,15 +55,15 @@ public class estoque {
                 nome = dados1.nextLine();
                 c1.setNome(nome);
 
-                System.out.println("Modelo do produto: ");
+                System.out.println("Modelo do produto(granel, kilos, litros): ");
                 modelo = dados2.nextLine();
                 c1.setModelo(modelo);
 
-                System.out.println("Tamanho do produto: ");
+                System.out.println("Tamanho do produto (kg): ");
                 tamanho = dados3.nextLine();
                 c1.setTamanho(tamanho);
 
-                System.out.println("Preço do produto: ");
+                System.out.println("Preço do produto(R$): ");
                 preco = dados.nextDouble();
                 c1.setPreco(preco);
 
