@@ -1,0 +1,35 @@
+package teste;
+
+import java.util.Scanner;
+
+public class contas {
+    
+public static void contas(String[] args) {
+  Scanner ler = new Scanner(System.in); 
+  int boi, rac, dia;
+  int aft, qtdrac;
+  
+  System.out.println(" Informe o valor da Aftosa\n");
+  aft = ler.nextInt();
+  
+  System.out.println("Informe a quantidade de Bovinos: ");
+  boi = ler.nextInt(); 
+  
+  System.out.println("Informe a quantidade de ração (kg): ");
+  qtdrac = ler.nextInt();
+
+  System.out.println("Informe o valor da ração (kg): ");
+  rac = ler.nextInt(); 
+
+  System.out.println("Informe a quantidade de dias que deseja saber total da ração: ");
+  dia = ler.nextInt(); 
+
+  System.out.println("\nResultados:\n");
+  System.out.println(" Aftosa é aplicada anualmente, entao o custo é de: " + aft*boi + "R$");
+  System.out.println(" Bovino come em media 13 kg de ração por dia, entao os " + boi + " bovinos" + " irão se alimentar por " + qtdrac/13 + " dias ");
+  System.out.println(" Total de ração nos dias desejados: " + qtdrac*dia + "kg");
+  System.out.println(" Voce ira gastar com ração: " + qtdrac*rac + "R$");
+  }
+
+}
+// valor da AFTOSA 1.10 reais //
