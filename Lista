@@ -1,0 +1,87 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+
+    private static void printMenu() {
+        System.out.println("""
+                Gerenciamento de Número
+                de Identificação:
+                1) Adicionar um Nº de identificação
+                2) Buscar um Nº de identificação
+                3) Excluir um Nº de identificação
+                4) Mostrar todos os Nº de identificação
+                5) Sair""");
+    }
+
+    private static void addNewName(List<String> lista, Scanner sc) {
+        System.out.print("Número a ser adicionado: ");
+        lista.add(sc.next());
+    }
+
+    private static void searchName(List<String> lista, Scanner sc) {
+        System.out.print("Número a ser buscado: ");
+        String nome = sc.next();
+        int index = lista.indexOf(nome);
+        if (index == -1) {
+            System.out.println("Número não encontrado");
+        } else {
+            System.out.println(lista.get(index));
+        }
+    }
+
+    private static void deleteName(List<String> lista, Scanner sc) {
+        int size = lista.size();
+        listNames(lista);
+        System.out.print("Numero de identificação a ser excluido: ");
+        int opcao = sc.nextInt();
+        if (opcao < 0 || opcao > size) {
+            System.out.println("Opção invalida");
+        }
+        lista.remove(opcao);
+    }
+
+    private static void listNames(List<String> lista) {
+        if (lista.size() > 0) {
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println(i + ") " + lista.get(i));
+            }
+        } else {
+            System.out.println("Nenhum Número cadastrado");
+        }
+        System.out.println();
+    }
+
+    private static int getOpcao(int opcao, Scanner sc) {
+        while (opcao < 1 || opcao > 5) {
+            System.out.print("Seleção: ");
+            opcao = sc.nextInt();
+        }
+        return opcao;
+    }
+
+    private static void branch(int opcao, List<String> lista, Scanner sc) {
+        switch (opcao) {
+            case 1 -> addNewName(lista, sc);
+            case 2 -> searchName(lista, sc);
+            case 3 -> deleteName(lista, sc);
+            case 4 -> listNames(lista);
+            case 5 -> System.exit(0);
+        }
+    }
+    
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        int opcao = 0;
+        while (true) {
+            printMenu();
+            opcao = getOpcao(opcao, sc);
+            branch(opcao, lista, sc);
+            opcao = 0;
+        }
+    }
+}
